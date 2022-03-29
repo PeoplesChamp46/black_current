@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card-container">
+    <div class="card"
+    *ngFor="let imgu of board_arr; let ix = index"
+    (click)="openCard(ix)"
+    >
+      <div class="image">
+        <img [src]="imgu.image_url" alt="" />
+      </div>
+      <div class="text-content">
+        <h3>{{imgu.name}}</h3>
+        <p>{{imgu.artist}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog">
+      <div class="image-container">
+        <img  alt="" />
+      </div>
+      <div class="content-box">
+
+      </div>
+  </div>
+</div>

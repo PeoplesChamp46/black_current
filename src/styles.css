@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: blueviolet;
+  --accent-color: #75d41d;
+}
+
+.container {
+  width: calc(100vw - calc(100vw - 100%));
+  height: 100vh;
+  padding: 2em 0;
+}
+
+button {
+  width: 5em;
+  height: 3em;
+  text-transform: capitalize;
+  border-radius: 0.5em;
+  border: none;
+  background-color: var(--accent-color);
+
+  font-weight: bold;
+}

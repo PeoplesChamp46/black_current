@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="image">
+    <img [src]="blog_obj.image_url" alt="" />
+  </div>
+
+  <div class="blog-container">
+    <div class="head-data">
+      <h1>
+        {{ blog_obj.name }}
+      </h1>
+      <h4>
+        {{ blog_obj.artist }}
+      </h4>
+    </div>
+    <div class="btn-grp">
+      <button (click)="edit()">edit</button>
+      <button (click)="delet_blog()">delete</button>
+    </div>
+    <p id="blogs">
+      {{ blog_obj.blog_post }}
+    </p>
+  </div>
+</div>

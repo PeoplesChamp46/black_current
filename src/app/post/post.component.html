@@ -1,0 +1,84 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-container">
+    <div class="input-grp">
+      <label for="art_name">art name</label>
+      <input
+        type="text"
+        name="art_name"
+        ngModel
+        required
+        #art_name="ngModel"
+        placeholder="write name for art"
+      />
+    </div>
+
+    <div class="input-grp">
+      <label for="artist_name">artist name</label>
+      <input
+        type="text"
+        name="artist_name"
+        ngModel
+        required
+        #artist_name="ngModel"
+        placeholder="write name of artist"
+      />
+    </div>
+    <div class="input-grp">
+      <label for="description">description</label>
+      <input
+        type="text"
+        name="description"
+        ngModel
+        required
+        #description="ngModel"
+        placeholder="write short description about your art"
+      />
+    </div>
+    <div class="input-grp image">
+      <label for="image">image</label>
+      <input
+        type="text"
+        name="image"
+        ngModel
+        required
+        #artist_name="ngModel"
+        (keyup)="typed($event)"
+        placeholder="select image for your blog from unsplash"
+      />
+
+      or
+
+      <input
+        type="file"
+        name="file"
+        id="file"
+        (change)="onFileChanged($event)"
+      />
+
+      <img [src]="file_url" alt="" />
+      <div class="image-container" [style.display]="selected ? 'grid' : 'none'">
+        <div class="images" *ngFor="let imgu of imgUrl.results; let ix = index">
+          <img [src]="imgu.urls.regular" alt="" (click)="selectedImg(ix)" />
+        </div>
+      </div>
+    </div>
+    <div class="input-grp">
+      <label for="blog_post">blog post</label>
+      <textarea
+        rows="10"
+        cols="50"
+        name="blog_post"
+        value="write short description about your art"
+        ngModel
+        required
+        #blog_post="ngModel"
+      >
+      </textarea>
+    </div>
+
+    <div class="btngroup">
+      <button type="submit">post</button>
+      <button type="button" id="cancel" (click)="clear(f)">cancel</button>
+    </div>
+  </form>
+</div>
